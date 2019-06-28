@@ -15,7 +15,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/reveal.css">
+<link rel="stylesheet" href="reveal.js-3.1.0/css/reveal.css">
 <link rel="stylesheet" href="css/custom.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -24,7 +24,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/print/pdf.css';
+        link.href = 'reveal.js-3.1.0/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
@@ -13185,7 +13185,7 @@ pre-entrenados.</h1></div>
 <h1 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h1>
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13193,7 +13193,7 @@ pre-entrenados.</h1></div>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13208,7 +13208,7 @@ pre-entrenados.</h1></div>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13223,7 +13223,7 @@ pre-entrenados.</h1></div>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13238,7 +13238,7 @@ pre-entrenados.</h1></div>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13268,7 +13268,7 @@ pre-entrenados.</h1></div>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13284,58 +13284,6 @@ pre-entrenados.</h1></div>
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import numpy as np</span>
-
-<span class="n">reduced</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;embs/bert_pca.npy&quot;</span><span class="p">)</span>
-<span class="n">colores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;embs/bert_colores.npy&quot;</span><span class="p">)</span>
-<span class="n">textos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;embs/bert_textos.npy&quot;</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">reduced</span><span class="o">.</span><span class="n">T</span>
-
-<span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-    <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
-    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
-    <span class="n">hoverinfo</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
-    <span class="n">hoverlabel</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="n">colores</span><span class="p">),</span>
-    <span class="n">hovertext</span> <span class="o">=</span> <span class="n">textos</span><span class="p">,</span>
-    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">colores</span><span class="p">,</span>
-        <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace1</span><span class="p">]</span>
-<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Embeddings con BERT&#39;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">),</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">720</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">480</span><span class="p">,</span>
-    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">t</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
@@ -13411,56 +13359,6 @@ if (outputEl) {{
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reduced</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;embs/glove_pca.npy&quot;</span><span class="p">)</span>
-<span class="n">colores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;embs/glove_colores.npy&quot;</span><span class="p">)</span>
-<span class="n">textos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;embs/glove_textos.npy&quot;</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">reduced</span><span class="o">.</span><span class="n">T</span>
-
-<span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-    <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
-    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
-    <span class="n">hoverinfo</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
-    <span class="n">hoverlabel</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="n">colores</span><span class="p">),</span>
-    <span class="n">hovertext</span> <span class="o">=</span> <span class="n">textos</span><span class="p">,</span>
-    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">colores</span><span class="p">,</span>
-        <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace1</span><span class="p">]</span>
-<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Embeddings con GloVe&#39;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">),</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">720</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">480</span><span class="p">,</span>
-    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">t</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
@@ -13542,7 +13440,7 @@ if (outputEl) {{
 <h1 id="An&#225;lisis-Exploratorio">An&#225;lisis Exploratorio<a class="anchor-link" href="#An&#225;lisis-Exploratorio">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13557,7 +13455,7 @@ if (outputEl) {{
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13721,7 +13619,66 @@ if (outputEl) {{
 <h1 id="Metodolog&#237;a">Metodolog&#237;a<a class="anchor-link" href="#Metodolog&#237;a">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Preprocesamiento">Preprocesamiento<a class="anchor-link" href="#Preprocesamiento">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="WNUT-y-WIKINER">WNUT y WIKINER<a class="anchor-link" href="#WNUT-y-WIKINER">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>NLPTaskDataFetcher.load_corpus(NLPTask.WNUT_17)</li>
+<li>from flair.datasets import WIKINER_ENGLISH</li>
+</ul>
+<p><img src="img/smiley.jpg" alt="drawing" width="200"/></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="MUC3-y-MUC4">MUC3 y MUC4<a class="anchor-link" href="#MUC3-y-MUC4">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="img/muc34/text_etl.png" alt="Smiley face" border="5"> 
+<img src="img/muc34/keys_etl.png" alt="Smiley face" border="5"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="img/muc34/biluo_muc.png" alt="Smiley face" border="5"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="img/pandas.png" alt="Smiley face" border="5"> 
+<img src="img/spacy.png" alt="Smiley face" width=500></p>
+
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13737,34 +13694,18 @@ if (outputEl) {{
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="NER-para-MUC">NER para MUC<a class="anchor-link" href="#NER-para-MUC">&#182;</a></h1>
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/metodologia/Tensorflow_logo.png" alt="drawing" width="200"/>
-<img src="img/metodologia/keras_logo.png" alt="drawing" width="200"/></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Procesamiento">Procesamiento<a class="anchor-link" href="#Procesamiento">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/metodologia/amazon_ec2.png" alt="drawing" /></p>
+<p><img src="img/metodologia/metod_muc.png" alt="drawing" width="1000"/></p>
 
 </div>
 </div>
@@ -13775,7 +13716,7 @@ if (outputEl) {{
 <h1 id="Resultados">Resultados<a class="anchor-link" href="#Resultados">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13790,7 +13731,7 @@ if (outputEl) {{
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13805,7 +13746,7 @@ if (outputEl) {{
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13909,9 +13850,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/classList.js",
+                { src: "reveal.js-3.1.0/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/notes/notes.js",
+                { src: "reveal.js-3.1.0/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
@@ -13959,8 +13900,8 @@ require(
       waitSeconds: 15
     },
     [
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/head.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/js/reveal.js"
+      "reveal.js-3.1.0/lib/js/head.min.js",
+      "reveal.js-3.1.0/js/reveal.js"
     ],
     function(head, Reveal){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
@@ -13973,9 +13914,9 @@ require(
             transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/classList.js",
+                { src: "reveal.js-3.1.0/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/notes/notes.js",
+                { src: "reveal.js-3.1.0/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } },
                 { src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(
