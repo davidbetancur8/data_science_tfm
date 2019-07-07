@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
 /**
  * This theme is based on the simple theme from reveal.js.
  * Copyright (C) 2016 Dat Tran, http://dat-tran.com/
@@ -269,3 +269,19 @@ ol li ul li:before {
   color: #0093C9;
 }
 
+.overlay_contenedor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgb(253, 253, 253);
+}
+
+.contenedor:hover .overlay_contenedor {
+  opacity: 1;
+}
